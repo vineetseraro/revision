@@ -1,0 +1,45 @@
+npm init to create package.jason file
+create a server.js file
+install mongoose, express, body-parser, cors - it will create node module file and add all the dependencies
+npm install mongoose
+Write code in server.js to connect with db and create server
+    var express=require('express') - call express in server.js file
+    similarly call body-parser, cors, mongoose in the server.js file
+    var express=require('express');
+    var mongoose=require('mongoose')
+    var cors=require('cors');
+    var bodyParser = require('body-parser');
+    var app=express();
+
+Call all the specific components
+    app.use(bodyParser.json());
+    app.use(cors());
+    app.use(
+    bodyParser.urlencoded({
+        extended:false
+     })
+    )
+
+Now we need to create a server with following code
+app.get('/',function(request,response){
+    response.send("server is runing")
+
+});
+
+Now we need to tell the broswer for the port information
+
+app.listen(8080,function(){
+    console.log('everything is okay')
+
+
+create router folder in node_module
+create 
+
+Now connect with db
+const mongoURI='mongodb+srv://admin:admin@cluster0.ykxm7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+mongoose.connect(
+    mongoURI,
+    {
+        useNewUrlParser:true
+    }
+)
